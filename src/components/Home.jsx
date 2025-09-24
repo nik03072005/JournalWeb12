@@ -138,10 +138,11 @@ export default function Home() {
       <div
         className="min-h-screen relative overflow-hidden"
         style={{
-          backgroundImage: "linear-gradient(rgba(15,23,42,0.24), rgba(30,41,59,0.24)), url('/library.jpg')",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url('/library.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed"
         }}
       >
         <Navbar />
@@ -149,9 +150,10 @@ export default function Home() {
         {/* Hero Section - Enhanced Mobile Responsive */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-3 sm:px-6 md:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16 min-h-screen">
           {/* University Badge - Enhanced */}
-          <div className="bg-white/12 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-white/30 mb-6 sm:mb-8 shadow-lg">
+                    {/* University Badge - Fully Transparent */}
+          <div className="rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-white/10 mb-6 sm:mb-8 shadow-lg">
             <span className="text-xs sm:text-sm font-medium text-white flex items-center gap-2">
-              🏛️ Rabindranath Tagore University, Hojai
+              📚 Digital Library - Durama College
             </span>
           </div>
 
@@ -164,28 +166,29 @@ export default function Home() {
           </h1>
 
           {/* Subtitle - Enhanced */}
-          <p className="text-white/95 text-sm sm:text-base md:text-lg max-w-xs sm:max-w-2xl md:max-w-3xl mb-8 sm:mb-10 leading-relaxed font-normal px-2 drop-shadow-md">
-            Dive into our comprehensive digital library featuring cutting-edge research,
-            academic excellence, and innovative learning resources in the heart of knowledge.
+          <p className="text-white/90 text-lg sm:text-xl md:text-2xl max-w-xs sm:max-w-2xl md:max-w-4xl mb-12 sm:mb-16 leading-relaxed font-light px-2 drop-shadow-md">
+            Access millions of academic resources, research papers, and
+            <br className="hidden sm:block" />
+            digital archives from anywhere in the world
           </p>
 
-          {/* Advanced Knowledge Search Section - Subtle Enhancement */}
-          <div className="bg-black/30 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 border border-white/30 shadow-2xl max-w-sm sm:max-w-md md:max-w-4xl lg:max-w-6xl w-full mb-8 sm:mb-12 mx-auto">
+          {/* Advanced Knowledge Search Section */}
+          <div className="bg-black/20 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 border border-white/20 shadow-2xl max-w-sm sm:max-w-md md:max-w-4xl lg:max-w-5xl w-full mb-12 sm:mb-16 mx-auto">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4 text-center tracking-tight drop-shadow-md">
               Advanced Knowledge Search
             </h2>
-            <p className="text-white/95 text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 lg:mb-10 text-center font-normal px-2 drop-shadow-sm">
-              Powered by AI to find exactly what you need
+            <p className="text-white/80 text-base sm:text-lg md:text-xl mb-8 sm:mb-10 text-center font-light px-2">
+              Powered by AI to find exactly what you need across our vast collection
             </p>
             
-            {/* Enhanced Search Bar - Refined Design */}
-            <div className="flex w-full bg-black/35 backdrop-blur-lg rounded-xl sm:rounded-2xl border border-white/35 overflow-hidden mb-6 sm:mb-8 shadow-xl">
+            {/* Enhanced Search Bar */}
+            <div className="flex w-full bg-black/30 rounded-xl border border-white/20 overflow-hidden mb-8 shadow-2xl">
               <div className="flex items-center pl-4 sm:pl-6 py-2">
                 <Search className="w-6 h-6 sm:w-7 sm:h-7 text-white/90" />
               </div>
               <input
                 type="text"
-                placeholder="Search books, articles, research papers..."
+                placeholder="Search books, articles, research papers, datasets..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={(e) => {
@@ -215,7 +218,7 @@ export default function Home() {
                   <Link
                     key={index}
                     href={`/search/${encodeURIComponent(search)}`}
-                    className="px-3 sm:px-4 py-1 sm:py-1.5 bg-white/10 hover:bg-white/20 text-gray-200 text-xs sm:text-sm rounded-full transition-all duration-200"
+                    className="px-3 sm:px-4 py-1 sm:py-1.5 hover:bg-white/10 text-gray-200 text-xs sm:text-sm rounded-full transition-all duration-200 border border-white/5 hover:border-white/15"
                   >
                     {search}
                   </Link>
@@ -223,35 +226,35 @@ export default function Home() {
               </div>
             )}
 
-            {/* Category Buttons - Refined Styling */}
+            {/* Category Buttons - Fully Transparent */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 px-2">
               <Link
                 href="/type/E-Books"
-                className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full bg-black/25 backdrop-blur-md border border-white/35 text-white font-medium hover:bg-black/35 hover:border-white/50 transition-all duration-300 text-xs sm:text-sm md:text-base shadow-md"
+                className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full border border-white/15 text-white font-medium hover:bg-white/5 hover:border-white/25 transition-all duration-300 text-xs sm:text-sm md:text-base shadow-md"
               >
                 E-Books
               </Link>
               <Link
                 href="/subjects"
-                className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full bg-black/25 backdrop-blur-md border border-white/35 text-white font-medium hover:bg-black/35 hover:border-white/50 transition-all duration-300 text-xs sm:text-sm md:text-base shadow-md"
+                className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full border border-white/15 text-white font-medium hover:bg-white/5 hover:border-white/25 transition-all duration-300 text-xs sm:text-sm md:text-base shadow-md"
               >
                 Journals
               </Link>
               <Link
                 href="#"
-                className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full bg-black/25 backdrop-blur-md border border-white/35 text-white font-medium hover:bg-black/35 hover:border-white/50 transition-all duration-300 text-xs sm:text-sm md:text-base shadow-md"
+                className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full border border-white/15 text-white font-medium hover:bg-white/5 hover:border-white/25 transition-all duration-300 text-xs sm:text-sm md:text-base shadow-md"
               >
                 Archives
               </Link>
               <Link
                 href="#"
-                className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full bg-black/25 backdrop-blur-md border border-white/35 text-white font-medium hover:bg-black/35 hover:border-white/50 transition-all duration-300 text-xs sm:text-sm md:text-base shadow-md"
+                className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full border border-white/15 text-white font-medium hover:bg-white/5 hover:border-white/25 transition-all duration-300 text-xs sm:text-sm md:text-base shadow-md"
               >
                 Datasets
               </Link>
               <Link
                 href="/advanceSearch"
-                className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full bg-cyan-500/25 backdrop-blur-md border border-cyan-400/60 text-white font-medium hover:bg-cyan-500/35 hover:border-cyan-400/80 transition-all duration-300 flex items-center gap-2 text-xs sm:text-sm md:text-base shadow-md"
+                className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full border border-cyan-400/30 text-white font-medium hover:bg-cyan-500/15 hover:border-cyan-400/50 transition-all duration-300 flex items-center gap-2 text-xs sm:text-sm md:text-base shadow-md"
                 aria-label="Advanced Search"
               >
                 <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -263,52 +266,58 @@ export default function Home() {
             </div>
           </div> 
 
-          {/* Enhanced Stats Section - Refined Glassmorphism */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 w-full max-w-sm sm:max-w-md md:max-w-4xl lg:max-w-6xl px-2 sm:px-4">
-            {/* Articles */}
-            <div className="bg-black/30 backdrop-blur-lg p-3 sm:p-4 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl text-center border border-white/30 hover:bg-black/40 hover:border-white/40 transition-all duration-300 group shadow-lg">
-              <div className="bg-white/30 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 group-hover:scale-110 group-hover:bg-white/40 transition-all duration-300 shadow-md">
-                <span className="text-sm sm:text-base md:text-lg">📄</span>
+          {/* Enhanced Stats Section */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full max-w-sm sm:max-w-md md:max-w-5xl px-2 sm:px-4">
+            {/* Research Articles */}
+            <div className="bg-black/30 backdrop-blur-sm p-6 sm:p-8 rounded-2xl text-center border border-white/20 hover:bg-black/40 hover:border-white/30 transition-all duration-300 group shadow-xl">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-600/50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                </svg>
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-1 sm:mb-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-md">
-                {stats.loading ? formatNumber(animatedNumbers.articles) : formatNumber(stats.articles)}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
+                250K+
               </h3>
-              <p className="text-white/95 text-xs sm:text-sm md:text-base font-medium drop-shadow-sm">Articles</p>
+              <p className="text-white/80 text-sm sm:text-base font-medium">Research Articles</p>
             </div>
             
-            {/* Books */}
-            <div className="bg-black/30 backdrop-blur-lg p-3 sm:p-4 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl text-center border border-white/30 hover:bg-black/40 hover:border-white/40 transition-all duration-300 group shadow-lg">
-              <div className="bg-white/30 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 group-hover:scale-110 group-hover:bg-white/40 transition-all duration-300 shadow-md">
-                <span className="text-sm sm:text-base md:text-lg">📚</span>
+            {/* Digital Books */}
+            <div className="bg-black/30 backdrop-blur-sm p-6 sm:p-8 rounded-2xl text-center border border-white/20 hover:bg-black/40 hover:border-white/30 transition-all duration-300 group shadow-xl">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-600/50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C20.168 18.477 18.582 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-1 sm:mb-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-md">
-                {stats.loading ? formatNumber(animatedNumbers.books) : formatNumber(stats.books)}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
+                500K+
               </h3>
-              <p className="text-white/95 text-xs sm:text-sm md:text-base font-medium drop-shadow-sm">Books</p>
+              <p className="text-white/80 text-sm sm:text-base font-medium">Digital Books</p>
             </div>
             
-            {/* Journals */}
-            <div className="bg-black/30 backdrop-blur-lg p-3 sm:p-4 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl text-center border border-white/30 hover:bg-black/40 hover:border-white/40 transition-all duration-300 group shadow-lg">
-              <div className="bg-white/30 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 group-hover:scale-110 group-hover:bg-white/40 transition-all duration-300 shadow-md">
-                <span className="text-sm sm:text-base md:text-lg">📖</span>
+            {/* Academic Journals */}
+            <div className="bg-black/30 backdrop-blur-sm p-6 sm:p-8 rounded-2xl text-center border border-white/20 hover:bg-black/40 hover:border-white/30 transition-all duration-300 group shadow-xl">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-600/50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2H15" />
+                </svg>
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-1 sm:mb-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-md">
-                {stats.loading ? formatNumber(animatedNumbers.journals) : formatNumber(stats.journals)}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
+                15K+
               </h3>
-              <p className="text-white/95 text-xs sm:text-sm md:text-base font-medium drop-shadow-sm">Journals</p>
+              <p className="text-white/80 text-sm sm:text-base font-medium">Academic Journals</p>
             </div>
             
-            {/* Access */}
-            <div className="bg-black/30 backdrop-blur-lg p-3 sm:p-4 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl text-center border border-white/30 hover:bg-black/40 hover:border-white/40 transition-all duration-300 group shadow-lg">
-              <div className="bg-white/30 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 group-hover:scale-110 group-hover:bg-white/40 transition-all duration-300 shadow-md">
-                <span className="text-sm sm:text-base md:text-lg">🕒</span>
+            {/* Global Access */}
+            <div className="bg-black/30 backdrop-blur-sm p-6 sm:p-8 rounded-2xl text-center border border-white/20 hover:bg-black/40 hover:border-white/30 transition-all duration-300 group shadow-xl">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-600/50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-1 sm:mb-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-md">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
                 24/7
               </h3>
-              <p className="text-white/95 text-xs sm:text-sm md:text-base font-medium drop-shadow-sm">
-                Access Always Available
-              </p>
+              <p className="text-white/80 text-sm sm:text-base font-medium">Global Access</p>
             </div>
           </div>
         </div>

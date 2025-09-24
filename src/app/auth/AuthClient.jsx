@@ -153,7 +153,7 @@ const checkSubscription = async () => {
       {/* Header */}
       <div className="text-center mb-6">
         <h1 className="text-2xl md:text-3xl font-bold text-black mb-2">
-          Digital Library - Rabindranath Tagore University, Hojai
+          Digital Library - Durama College, Tura
         </h1>
       </div>
       

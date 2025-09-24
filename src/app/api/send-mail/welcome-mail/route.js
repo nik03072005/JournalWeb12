@@ -56,9 +56,9 @@ export async function POST(req) {
     });
 
     const mailOptions = {
-      from: `"Digital Library - Rabindranath Tagore University 🎓" <${process.env.SMTP_EMAIL}>`,
+      from: `"Digital Library - Durama College 🎓" <${process.env.SMTP_EMAIL}>`,
       to: email,
-      subject: 'Welcome to Digital Library - Rabindranath Tagore University',
+      subject: 'Welcome to Digital Library - Durama College',
       html: htmlTemplate,
     };
 

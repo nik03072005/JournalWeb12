@@ -32,7 +32,7 @@ const Footer = () => {
                     </div>
                   </div>
                 </div>
-                <h3 className="text-lg lg:text-xl font-bold text-white mb-3 lg:mb-4">Rabindranath Tagore University</h3>
+                <h3 className="text-lg lg:text-xl font-bold text-white mb-3 lg:mb-4">Durama College</h3>
               </div>
               <p className="text-gray-300 leading-relaxed text-sm lg:text-base">
                 Empowering minds through technology. Access the world's largest collection of academic resources, research papers, and digital archives. Join millions of researchers, students, and educators in the pursuit of knowledge.
@@ -49,13 +49,13 @@ const Footer = () => {
               </div>
               <ul className="space-y-3 lg:space-y-4">
                 {[
-                  { name: "NAAC", url: "http://naac.gov.in/index.php/" },
-                  { name: "Gauhati University", url: "http://www.gauhati.ac.in/" },
-                  { name: "University Grant Commission", url: "https://www.ugc.gov.in/" },
-                  { name: "Director of Higher Education", url: "http://www.dheassam.gov.in/" },
-                  { name: "Anti Ragging Affidavit", url: "#" },
-                  { name: "National Council For Teacher Education", url: "http://www.ncte-india.org/" },
-                  { name: "Old Website", url: "#" }
+                  { name: "NAAC", url: "http://naac.gov.in/index.php/en/" },
+                  // { name: "Gauhati University", url: "http://www.gauhati.ac.in/" },
+                  { name: "UGC", url: "https://www.ugc.gov.in/" },
+                  { name: "MHRD", url: "https://mhrd.gov.in/" },
+                  { name: "DHTE", url: "https://megeducation.gov.in/dhte/dhte.html" },
+                  { name: "NEHU", url: "https://www.nehu.ac.in/" },
+                  // { name: "Old Website", url: "#" }
                 ].map((link, index) => (
                   <li key={index} className="group">
                     <a 
@@ -88,8 +88,7 @@ const Footer = () => {
                   </div>
                   <div className="text-center sm:text-left">
                     <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
-                      Rabindranath Tagore University,  P.O-Hojai, District-Hojai, Pin-782436
- Assam
+                      Durama College, Tura, West Garo Hills, Meghalaya
                     </p>
                   </div>
                 </li>
@@ -98,8 +97,8 @@ const Footer = () => {
                   <div className="flex-shrink-0 w-8 h-8 lg:w-10 lg:h-10 bg-green-500/20 rounded-lg flex items-center justify-center mb-2 sm:mb-0 sm:mr-3 lg:mr-4 group-hover:bg-green-500/30 transition-colors duration-300">
                     <Phone className="w-4 h-4 lg:w-5 lg:h-5 text-green-400" />
                   </div>
-                  <a href="tel:+919435194607" className="text-gray-300 hover:text-white transition-colors duration-300 text-sm lg:text-base text-center sm:text-left">
-                    +91 7002418574
+                  <a href="tel:+91 7629801713" className="text-gray-300 hover:text-white transition-colors duration-300 text-sm lg:text-base text-center sm:text-left">
+                    +91 7629801713
                   </a>
                 </li>
                 
@@ -107,8 +106,8 @@ const Footer = () => {
                   <div className="flex-shrink-0 w-8 h-8 lg:w-10 lg:h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mb-2 sm:mb-0 sm:mr-3 lg:mr-4 group-hover:bg-blue-500/30 transition-colors duration-300">
                     <Mail className="w-4 h-4 lg:w-5 lg:h-5 text-blue-400" />
                   </div>
-                  <a href="mailto:rabindranathtagoreuniversity@gmail.com" className="text-gray-300 hover:text-white transition-colors duration-300 text-sm lg:text-base break-all text-center sm:text-left">
-                    rabindranathtagoreuniversity@gmail.com
+                  <a href="mailto:duramacollege@gmail.com" className="text-gray-300 hover:text-white transition-colors duration-300 text-sm lg:text-base break-all text-center sm:text-left">
+                    duramacollege@gmail.com
                   </a>
                 </li>
                 
@@ -116,8 +115,8 @@ const Footer = () => {
                   <div className="flex-shrink-0 w-8 h-8 lg:w-10 lg:h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mb-2 sm:mb-0 sm:mr-3 lg:mr-4 group-hover:bg-purple-500/30 transition-colors duration-300">
                     <Globe className="w-4 h-4 lg:w-5 lg:h-5 text-purple-400" />
                   </div>
-                  <a href="https://www.rtuassam.ac.in" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 text-sm lg:text-base text-center sm:text-left">
-                    https://www.rtuassam.ac.in
+                  <a href="https://www.duramacollege.edu.in" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 text-sm lg:text-base text-center sm:text-left">
+                    https://www.duramacollege.edu.in
                   </a>
                 </li>
               </ul>
@@ -131,7 +130,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-3 lg:gap-4 text-center md:text-left">
               <div>
                 <p className="text-gray-300 text-xs lg:text-sm">
-                  © 2025 All Rights Reserved - Rabindranath Tagore University, Hojai 
+                  © 2025 All Rights Reserved - Durama College, Tura 
                 </p>
               </div>
               <div className="flex items-center gap-2 lg:gap-3">

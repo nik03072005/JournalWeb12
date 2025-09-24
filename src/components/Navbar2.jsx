@@ -78,6 +78,15 @@ export default function Navbar() {
                 />
               </div>
             </div>
+            {/* Digital Library Text */}
+            <div className="hidden sm:flex flex-col text-left">
+              <h1 className="text-white text-lg font-bold tracking-wide drop-shadow-md">
+                Digital Library
+              </h1>
+              <p className="text-white/90 text-sm font-medium tracking-wide drop-shadow-sm">
+                Durama College
+              </p>
+            </div>
           </Link>
 
           {/* Center Navigation */}
