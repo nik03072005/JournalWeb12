@@ -20,7 +20,7 @@ export default function Home() {
     books: 0,
     journals: 0
   });
-  const [recentSearches, setRecentSearches] = useState([]);
+
 
   const { isLoggedIn, logout, hasHydrated } = useAuthStore();
 
@@ -40,23 +40,11 @@ export default function Home() {
   // Memoized search handler
   const handleSearch = useCallback(() => {
     if (searchTerm.trim()) {
-      const newSearch = searchTerm.trim();
-      setRecentSearches(prev => {
-        const updated = [newSearch, ...prev.filter(s => s !== newSearch)].slice(0, 5);
-        localStorage.setItem('recentSearches', JSON.stringify(updated));
-        return updated;
-      });
-      window.location.href = `/search/${encodeURIComponent(newSearch)}`;
+      window.location.href = `/search/${encodeURIComponent(searchTerm.trim())}`;
     }
   }, [searchTerm]);
 
-  // Load recent searches from localStorage
-  useEffect(() => {
-    const savedSearches = localStorage.getItem('recentSearches');
-    if (savedSearches) {
-      setRecentSearches(JSON.parse(savedSearches));
-    }
-  }, []);
+  
 
   // Animated counter while loading
   useEffect(() => {
@@ -149,8 +137,7 @@ export default function Home() {
 
         {/* Hero Section - Enhanced Mobile Responsive */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-3 sm:px-6 md:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16 min-h-screen">
-          {/* University Badge - Enhanced */}
-                    {/* University Badge - Fully Transparent */}
+          {/* University Badge - Fully Transparent */}
           <div className="rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-white/10 mb-6 sm:mb-8 shadow-lg">
             <span className="text-xs sm:text-sm font-medium text-white flex items-center gap-2">
               📚 Digital Library - Durama College
@@ -172,15 +159,8 @@ export default function Home() {
             digital archives from anywhere in the world
           </p>
 
-          {/* Advanced Knowledge Search Section */}
+          {/* Search Section */}
           <div className="bg-black/20 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 border border-white/20 shadow-2xl max-w-sm sm:max-w-md md:max-w-4xl lg:max-w-5xl w-full mb-12 sm:mb-16 mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4 text-center tracking-tight drop-shadow-md">
-              Advanced Knowledge Search
-            </h2>
-            <p className="text-white/80 text-base sm:text-lg md:text-xl mb-8 sm:mb-10 text-center font-light px-2">
-              Powered by AI to find exactly what you need across our vast collection
-            </p>
-            
             {/* Enhanced Search Bar */}
             <div className="flex w-full bg-black/30 rounded-xl border border-white/20 overflow-hidden mb-8 shadow-2xl">
               <div className="flex items-center pl-4 sm:pl-6 py-2">
@@ -210,21 +190,6 @@ export default function Home() {
                 SEARCH
               </button>
             </div>
-
-            {/* Recent Searches */}
-            {recentSearches.length > 0 && (
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4">
-                {recentSearches.map((search, index) => (
-                  <Link
-                    key={index}
-                    href={`/search/${encodeURIComponent(search)}`}
-                    className="px-3 sm:px-4 py-1 sm:py-1.5 hover:bg-white/10 text-gray-200 text-xs sm:text-sm rounded-full transition-all duration-200 border border-white/5 hover:border-white/15"
-                  >
-                    {search}
-                  </Link>
-                ))}
-              </div>
-            )}
 
             {/* Category Buttons - Fully Transparent */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 px-2">
@@ -276,7 +241,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
-                250K+
+                {stats.loading ? formatNumber(animatedNumbers.articles) : formatNumber(stats.articles)}
               </h3>
               <p className="text-white/80 text-sm sm:text-base font-medium">Research Articles</p>
             </div>
@@ -289,7 +254,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
-                500K+
+                {stats.loading ? formatNumber(animatedNumbers.books) : formatNumber(stats.books)}
               </h3>
               <p className="text-white/80 text-sm sm:text-base font-medium">Digital Books</p>
             </div>
@@ -302,7 +267,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
-                15K+
+                {stats.loading ? formatNumber(animatedNumbers.journals) : formatNumber(stats.journals)}
               </h3>
               <p className="text-white/80 text-sm sm:text-base font-medium">Academic Journals</p>
             </div>
